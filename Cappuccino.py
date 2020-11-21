@@ -9,7 +9,7 @@ import datetime as dt
 class MyDialog(QDialog):
     def __init__(self, array, changed=False):
         super().__init__()
-        uic.loadUi('addEditCoffeeForm.ui', self)
+        uic.loadUi('UI/addEditCoffeeForm.ui', self)
         self.pushButton.clicked.connect(self.accept_data)
         if changed:
             self.setWindowTitle('Редактирование записи')
@@ -49,8 +49,8 @@ class MyDialog(QDialog):
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("UI_cappuccino.ui", self)
-        self.con = sqlite3.connect("coffee.db")
+        uic.loadUi("UI/UI_cappuccino.ui", self)
+        self.con = sqlite3.connect("data/coffee.db")
         self.setWindowTitle("Фильмотека")
         self.pushButton_2.clicked.connect(self.change_film)
         self.pushButton_3.clicked.connect(self.add_film)
